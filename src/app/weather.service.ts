@@ -4,13 +4,8 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class WeatherService {
-	constructor(protected http: HttpClient) { }
-    getCities(): any {
-       return this.constCiti 
-    }
-
-  public constCiti = {
-    "citi":[{
+  public constCiti = [
+    {
         "id": 833,
         "name": "Ḩeşār-e Sefīd",
         "state": "",
@@ -509,6 +504,12 @@ export class WeatherService {
             "lon": 46.23333,
             "lat": 38.133331
         }
-    }]
-}
+    }];
+
+	constructor(private http: HttpClient) { }
+    getCities(): any {
+       return this.constCiti; 
+    }
+
+  
 }
